@@ -25,8 +25,8 @@ function SSL() {
 
 }
 
-SSL.initialize = function(sslPath) {  
-  var sharedLib = ctypes.open(sslPath);
+SSL.initialize = function(sharedLib) {  
+  //var sharedLib = ctypes.open(sslPath);
 
   SSL.types = new Object();
 
