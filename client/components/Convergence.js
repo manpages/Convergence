@@ -69,8 +69,8 @@ Convergence.prototype = {
       Components.utils.import("resource://gre/modules/Services.jsm");
       Components.utils.import("resource://gre/modules/ctypes.jsm");
 
-      this.nsprFile = Services.dirsvc.get("GreD", Components.interfaces.nsILocalFile);
-      this.nsprFile.append(ctypes.libraryName("nspr4"));
+      //this.nsprFile = Services.dirsvc.get("GreD", Components.interfaces.nsILocalFile);
+      //this.nsprFile.append(ctypes.libraryName("nspr4"));
 
       this.nssFile = Services.dirsvc.get("GreD", Components.interfaces.nsILocalFile);
       this.nssFile.append(ctypes.libraryName("nss3"));
@@ -81,10 +81,10 @@ Convergence.prototype = {
       this.sqliteFile = Services.dirsvc.get("GreD", Components.interfaces.nsILocalFile);
       this.sqliteFile.append(ctypes.libraryName("mozsqlite3"));
 
-      NSPR.initialize(this.nsprFile.path);
-      NSS.initialize(this.nssFile.path);
-      SSL.initialize(this.sslFile.path);
-      SQLITE.initialize(this.sqliteFile.path);
+      NSPR.initialize(ctypes.open("libnspr4.so"));
+      NSS.initialize(ctypes.open("libnss3.so"));
+      SSL.initialize(ctypes.open("libssl3.so"));
+      SQLITE.initialize(ctypes.open("libsqlite3.so"));
     } catch (e) {
       dump("Error initializing ctypes: " + e + ", " + e.stack + "\n");
       throw e;

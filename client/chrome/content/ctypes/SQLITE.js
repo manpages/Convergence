@@ -25,8 +25,7 @@ function SQLITE() {
 
 }
 
-SQLITE.initialize = function(sqlitePath) {  
-  var sharedLib = ctypes.open(sqlitePath);
+SQLITE.initialize = function(sharedLib) {  
 
   SQLITE.types = new Object();
 

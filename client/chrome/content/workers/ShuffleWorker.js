@@ -65,9 +65,9 @@ ShuffleWorker.prototype.initializeDescriptors = function() {
 };
 
 ShuffleWorker.prototype.initialize = function(data) {
-  NSPR.initialize(data.nsprFile);
-  NSS.initialize(data.nssFile);
-  SSL.initialize(data.sslFile);
+  NSPR.initialize(ctypes.open("libnspr4.so"));
+  NSS.initialize(ctypes.open("libnss3.so"));
+  SSL.initialize(ctypes.open("libssl3.so"));
 
   this.buffer       = new NSPR.lib.buffer(4096);
   this.wakeup       = Serialization.deserializeDescriptor(data.fd);

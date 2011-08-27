@@ -144,7 +144,7 @@ SettingsManager.prototype.getInputSettingsObject = function() {
 };
 
 SettingsManager.prototype.savePreferences = function() {
-  var outputStream = this.getSettingsOutputStream();
+  var outputStream = this.getSettingsOutputStream();// ## settingsManager is undefined
   var serializer   = Components.classes["@mozilla.org/xmlextras/xmlserializer;1"]
   .createInstance(Components.interfaces.nsIDOMSerializer);
   var xmlDocument  = Components.classes["@mozilla.org/xml/xml-document;1"]

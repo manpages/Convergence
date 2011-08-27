@@ -25,9 +25,9 @@ function NSPR() {
 
 }
 
-NSPR.initialize = function(nsprPath) {
+NSPR.initialize = function(sharedLib) {
  
-  var sharedLib = ctypes.open(nsprPath);
+  //var sharedLib = ctypes.open(nsprPath);
   NSPR.types     = new Object();
 
   NSPR.types.PRSocketOptionData = ctypes.StructType("PRSocketOptionData",

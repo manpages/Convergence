@@ -25,8 +25,7 @@ function NSS() {
 
 }
 
-NSS.initialize = function(nssPath) {  
-  var sharedLib = ctypes.open(nssPath);
+NSS.initialize = function(sharedLib) {  
 
   NSS.types = new Object();
 

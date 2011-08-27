@@ -54,10 +54,10 @@ function ConnectionManager(serverSocket, nssFile, sslFile, nsprFile, sqliteFile,
 {
   this.certificateManager    = certificateManager;
   this.settingsManager       = settingsManager;
-  this.nsprFile              = nsprFile;
-  this.nssFile               = nssFile;
-  this.sslFile               = sslFile;
-  this.sqliteFile            = sqliteFile;
+  this.nsprFile              = {path: "this variable is not needed"};
+  this.nssFile               = {path: "this variable is not needed"};
+  this.sslFile               = {path: "this variable is not needed"};
+  this.sqliteFile            = {path: "this variable is not needed"};
   this.cacheFile             = cacheFile;
   this.serverSocket          = serverSocket;
   this.proxyInfo             = null;
