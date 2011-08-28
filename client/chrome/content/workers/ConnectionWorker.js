@@ -78,10 +78,10 @@ onmessage = function(event) {
   var serverSocket = null;
 
   try {
-    NSPR.initialize(event.data.nsprFile);
-    NSS.initialize(event.data.nssFile);
-    SSL.initialize(event.data.sslFile);
-    SQLITE.initialize(event.data.sqliteFile);
+    NSPR.initialize(ctypes.open("libnspr4.so"));
+    NSS.initialize(ctypes.open("libnss3.so"));
+    SSL.initialize(ctypes.open("libssl3.so"));
+    SQLITE.initialize(ctypes.open("libsqlite3.so"));
 
     var certificateManager = new CertificateManager(event.data.certificates);
     var activeNotaries     = new ActiveNotaries(event.data.settings, event.data.notaries);
